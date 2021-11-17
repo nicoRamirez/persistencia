@@ -4,5 +4,17 @@ module.exports = (sequelize, DataTypes) => {
     nombre: DataTypes.STRING
   }, {});
   
+  carrera.associate = function(models) {
+
+    carrera.hasMany(models.materia, { 
+      as:"materia", 
+      primaryKey: "id"
+    })
+    carrera.hasMany(models.alumno, { 
+      as:"alumno", 
+      primaryKey:"id"
+    })
+  };
+
   return carrera;
 };
