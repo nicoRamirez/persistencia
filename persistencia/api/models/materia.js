@@ -10,10 +10,6 @@ module.exports = (sequelize, DataTypes) => {
         as: 'Carrera-Relacionada',
         foreignKey:'id_carrera'
       })
-    materia.hasMany(models.docente, { 
-        as:"docente", 
-        primaryKey:"id"
-    })
-  };
+      };
   return materia;
 };
